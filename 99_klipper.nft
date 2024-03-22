@@ -1,0 +1,9 @@
+#!/usr/sbin/nft -f
+
+table inet filter {
+        chain input {
+                tcp dport 80 accept comment "accept HTTP"
+                tcp dport 7125 accept comment "accept Moonraker"
+        }
+}
+
